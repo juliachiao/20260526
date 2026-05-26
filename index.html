@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺北市即時雨量監測地圖</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    
+    <script src="sketch.js"></script>
+    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1a1a1a;
+        }
+        /* 地圖滿版容器 */
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        /* p5.js 畫布浮在地圖最上層，用於繪製漂亮的 Y2K UI 面板 */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            pointer-events: none; /* 讓滑鼠點擊與拖曳可以穿透到下層的地圖 */
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
